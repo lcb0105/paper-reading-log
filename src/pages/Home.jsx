@@ -274,6 +274,15 @@ const paperGroups = [
         description: '【MLLM 发展史综述】从历史脉络到技术全景：四大阶段发展历程（单模态→模态转换→模态融合→大规模 MLLM）、ViT/CLIP/BLIP-2/LLaVA 等核心模型解析、ITC/MLM 等训练目标公式推导、AGI 挑战与灾难性遗忘问题。',
         tags: ['Survey', 'MLLM', 'CLIP', 'LLaVA'],
         path: '/papers/mllm-overview'
+      },
+      {
+        id: 'vit-survey',
+        title: 'Visual Instruction Tuning towards General-Purpose Multimodal Model',
+        authors: 'Survey 2023',
+        date: '2023',
+        description: '【视觉指令微调综述】从传统任务特定范式到基于指令的通用范式转变。系统梳理 GPMM 三大支柱：数据构建（GPT-4 扩展）、架构设计（Vision Encoder + Adapter + LLM）、两阶段训练。涵盖判别/生成/推理任务及视频/3D/医疗领域应用。',
+        tags: ['Survey', 'VIT', 'LLaVA', 'LISA'],
+        path: '/papers/vit-survey'
       }
     ]
   }
