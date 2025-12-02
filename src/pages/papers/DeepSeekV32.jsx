@@ -261,7 +261,7 @@ export default function DeepSeekV32() {
                 explanation={
                   <>
                     使用 Dense Attention（全注意力）作为 Teacher 来蒸馏训练 Indexer。
-                    目标是让 Indexer 的分数分布 <InlineMath math="\\text{Softmax}(I_{t,S})" /> 尽可能接近主模型的注意力分布 <InlineMath math="p_{t,S}" />。
+                    目标是让 Indexer 的分数分布 <InlineMath math={"\\text{Softmax}(I_{t,S})"} /> 尽可能接近主模型的注意力分布 <InlineMath math={"p_{t,S}"} />。
                   </>
                 }
                 symbolMap={{
@@ -286,8 +286,8 @@ export default function DeepSeekV32() {
               explanation={
                 <>
                   GRPO 的核心是不需要独立的 Value Network (Critic)。
-                  它通过对同一个 prompt <InlineMath math="q" /> 采样一组输出 <InlineMath math="\\{o_1, ..., o_G\\}" />，
-                  并使用<strong>组内平均奖励</strong>作为 Baseline 来计算优势 <InlineMath math="\\hat{A}_{i,t}" />。
+                  它通过对同一个 prompt <InlineMath math={"q"} /> 采样一组输出 <InlineMath math={"\\{o_1, ..., o_G\\}"} />，
+                  并使用<strong>组内平均奖励</strong>作为 Baseline 来计算优势 <InlineMath math={"\\hat{A}_{i,t}"} />。
                 </>
               }
               symbolMap={{
@@ -308,7 +308,7 @@ export default function DeepSeekV32() {
                 latex={`r_{i,t}(\\theta) = \\frac{\\pi_{\\theta}(o_{i,t}|q, o_{i,<t})}{\\pi_{old}(o_{i,t}|q, o_{i,<t})}`}
                 explanation={
                   <>
-                    PPO 算法的核心组件。衡量当前策略 <InlineMath math="\\pi_\\theta" /> 相对于采样策略 <InlineMath math="\\pi_{old}" /> 的变化幅度。
+                    PPO 算法的核心组件。衡量当前策略 <InlineMath math={"\\pi_\\theta"} /> 相对于采样策略 <InlineMath math={"\\pi_{old}"} /> 的变化幅度。
                     如果比率远离 1，说明策略更新步长过大，需要被 Clip。
                   </>
                 }
@@ -325,8 +325,8 @@ export default function DeepSeekV32() {
                 latex={`M_{i,t} = \\mathbb{I}(\\neg (\\hat{A}_{i,t} < 0 \\land \\mathbb{D}_{KL} > \\delta))`}
                 explanation={
                   <>
-                    当样本表现不好（Advantage {"<"} 0）且策略差异过大（KL {">"} <InlineMath math="\\delta" />）时，
-                    将掩码 <InlineMath math="M_{i,t}" /> 设为 0，即<strong>不对此样本进行梯度更新</strong>。
+                    当样本表现不好（Advantage {"<"} 0）且策略差异过大（KL {">"} <InlineMath math={"\\delta"} />）时，
+                    将掩码 <InlineMath math={"M_{i,t}"} /> 设为 0，即<strong>不对此样本进行梯度更新</strong>。
                     这防止了模型基于"过时且错误"的经验进行错误学习。
                   </>
                 }
@@ -352,25 +352,26 @@ export default function DeepSeekV32() {
                   <div className="flex items-start gap-2">
                     <AlertTriangle size={16} className="text-red-500 mt-1 shrink-0"/>
                     <div>
-                      <span className="font-bold text-gray-800">传统 K3 的问题：</span>
-                      <span>
-                        K3 估计器形式近似为 <InlineMath math="\\log \\frac{\\pi_\\theta}{\\pi_{ref}}" />。
-                        当新策略概率 <InlineMath math="\\pi_\\theta \\to 0" /> 时，<InlineMath math="\\log \\pi_\\theta \\to -\\infty" />。
+                      <p><span className="font-bold text-gray-800">传统 K3 的问题：</span></p>
+                      <p className="mt-1">
+                        K3 估计器形式近似为 <InlineMath math={"\\log \\frac{\\pi_\\theta}{\\pi_{ref}}"} />。
+                        当新策略概率 <InlineMath math={"\\pi_\\theta \\to 0"} /> 时，<InlineMath math={"\\log \\pi_\\theta \\to -\\infty"} />。
                         这意味着如果模型偶尔采样到一个在当前策略下极不可能的 Token，梯度会变得无限大（爆炸），导致训练崩溃。
-                      </span>
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-green-600 mt-1 shrink-0"/>
                     <div>
-                      <span className="font-bold text-gray-800">DeepSeek 的解决方案：</span>
-                      <span>
-                        引入重要性采样比率 <InlineMath math="\\frac{\\pi_\\theta}{\\pi_{old}}" /> 作为系数。
-                        现在优化目标变成了类似 <InlineMath math="x \\log x" /> 的形式（其中 <InlineMath math="x = \\pi_\\theta" />）。
-                        根据极限法则，当 <InlineMath math="x \\to 0" /> 时，<InlineMath math="x \\log x \\to 0" />。
-                        <br/>
-                        <strong>物理意义：</strong> 当某个 Token 在当前策略下概率极低时，系数 <InlineMath math="\\frac{\\pi_\\theta}{\\pi_{old}}" /> 会自动将梯度"拉回"零，而不是让 <InlineMath math="\\log" /> 项通过负无穷大去炸毁梯度。这极大地降低了方差。
-                      </span>
+                      <p><span className="font-bold text-gray-800">DeepSeek 的解决方案：</span></p>
+                      <p className="mt-1">
+                        引入重要性采样比率 <InlineMath math={"\\frac{\\pi_\\theta}{\\pi_{old}}"} /> 作为系数。
+                        现在优化目标变成了类似 <InlineMath math={"x \\log x"} /> 的形式（其中 <InlineMath math={"x = \\pi_\\theta"} />）。
+                        根据极限法则，当 <InlineMath math={"x \\to 0"} /> 时，<InlineMath math={"x \\log x \\to 0"} />。
+                      </p>
+                      <p className="mt-2">
+                        <strong>物理意义：</strong> 当某个 Token 在当前策略下概率极低时，系数 <InlineMath math={"\\frac{\\pi_\\theta}{\\pi_{old}}"} /> 会自动将梯度"拉回"零，而不是让 <InlineMath math={"\\log"} /> 项通过负无穷大去炸毁梯度。这极大地降低了方差。
+                      </p>
                     </div>
                   </div>
                 </div>
