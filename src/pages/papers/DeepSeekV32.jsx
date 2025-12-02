@@ -226,7 +226,7 @@ export default function DeepSeekV32() {
             <div className="mb-8 border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
               <div className="w-full bg-gray-50 flex justify-center py-6 border-b border-gray-200">
                 <img 
-                  src="/deepseek-sparse-attention.png" 
+                  src={`${import.meta.env.BASE_URL}deepseek-sparse-attention.png`}
                   alt="DeepSeek-V3.2 DSA Architecture Diagram" 
                   className="max-w-full h-auto max-h-[500px] object-contain px-4"
                 />

@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // 使用相对路径，适配 GitHub Pages
+  base: '/paper-reading-log/', // GitHub Pages 仓库名
 })
 
