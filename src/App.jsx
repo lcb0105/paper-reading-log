@@ -29,6 +29,8 @@ import MLLMSurvey from './pages/papers/MLLMSurvey';
 import MLLMOverview from './pages/papers/MLLMOverview';
 import DeepSeekV32 from './pages/papers/DeepSeekV32';
 import VITPaper from './pages/papers/VITPaper';
+import MMLLMsPaper from './pages/papers/MMLLMsPaper';
+import MLLMRevolutionPaper from './pages/papers/MLLMRevolutionPaper';
 
 const App = () => {
   return (
@@ -63,6 +65,8 @@ const App = () => {
         <Route path="/papers/mllm-overview" element={<MLLMOverview />} />
         <Route path="/papers/deepseek-v32" element={<DeepSeekV32 />} />
         <Route path="/papers/vit-survey" element={<VITPaper />} />
+        <Route path="/papers/mm-llms" element={<MMLLMsPaper />} />
+        <Route path="/papers/mllm-revolution" element={<MLLMRevolutionPaper />} />
       </Routes>
     </Router>
   );

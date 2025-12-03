@@ -283,6 +283,24 @@ const paperGroups = [
         description: '【视觉指令微调综述】从传统任务特定范式到基于指令的通用范式转变。系统梳理 GPMM 三大支柱：数据构建（GPT-4 扩展）、架构设计（Vision Encoder + Adapter + LLM）、两阶段训练。涵盖判别/生成/推理任务及视频/3D/医疗领域应用。',
         tags: ['Survey', 'VIT', 'LLaVA', 'LISA'],
         path: '/papers/vit-survey'
+      },
+      {
+        id: 'mm-llms',
+        title: 'MM-LLMs: Recent Advances in MultiModal Large Language Models',
+        authors: 'Survey 2024',
+        date: '2024',
+        description: '【MM-LLMs 最新进展】系统分析 126 个多模态大模型：五大核心组件（模态编码器 + 输入投影器 + LLM + 输出投影器 + 模态生成器）、LDM 生成原理、两阶段训练流程（MM PT + MM IT）。深度解析 Any-to-Any 架构与潜在扩散模型的条件控制机制。',
+        tags: ['Survey', 'MM-LLMs', 'LDM', 'Any-to-Any'],
+        path: '/papers/mm-llms'
+      },
+      {
+        id: 'mllm-revolution',
+        title: 'The Revolution of Multimodal Large Language Models: A Survey',
+        authors: 'arXiv 2024',
+        date: '2024-02',
+        description: '【MLLM 革命综述】系统解析视觉 MLLM 的架构选择（ViT + LLM + Adapter）、三大核心公式（Cross-Attention/自回归损失/ITC 对比学习）、两阶段训练（特征对齐 + 指令微调）。涵盖视觉定位、图像生成、视频理解及医疗/自动驾驶等领域应用。',
+        tags: ['Survey', 'MLLM', 'Cross-Attention', 'ITC'],
+        path: '/papers/mllm-revolution'
       }
     ]
   }
