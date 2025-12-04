@@ -1,6 +1,17 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
+
+// ScrollToTop 组件：路由切换时自动滚动到顶部
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
 import DeepSeekV3 from './pages/papers/DeepSeekV3';
 import DeepSeekProverV2 from './pages/papers/DeepSeekProverV2';
 import DeepSeekMathV2 from './pages/papers/DeepSeekMathV2';
@@ -31,10 +42,12 @@ import DeepSeekV32 from './pages/papers/DeepSeekV32';
 import VITPaper from './pages/papers/VITPaper';
 import MMLLMsPaper from './pages/papers/MMLLMsPaper';
 import MLLMRevolutionPaper from './pages/papers/MLLMRevolutionPaper';
+import EfficientMLLMsPaper from './pages/papers/EfficientMLLMsPaper';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/papers/deepseek-v3" element={<DeepSeekV3 />} />
@@ -67,6 +80,7 @@ const App = () => {
         <Route path="/papers/vit-survey" element={<VITPaper />} />
         <Route path="/papers/mm-llms" element={<MMLLMsPaper />} />
         <Route path="/papers/mllm-revolution" element={<MLLMRevolutionPaper />} />
+        <Route path="/papers/efficient-mllms" element={<EfficientMLLMsPaper />} />
       </Routes>
     </Router>
   );

@@ -301,6 +301,15 @@ const paperGroups = [
         description: '【MLLM 革命综述】系统解析视觉 MLLM 的架构选择（ViT + LLM + Adapter）、三大核心公式（Cross-Attention/自回归损失/ITC 对比学习）、两阶段训练（特征对齐 + 指令微调）。涵盖视觉定位、图像生成、视频理解及医疗/自动驾驶等领域应用。',
         tags: ['Survey', 'MLLM', 'Cross-Attention', 'ITC'],
         path: '/papers/mllm-revolution'
+      },
+      {
+        id: 'efficient-mllms',
+        title: 'Efficient Multimodal Large Language Models: A Survey',
+        authors: 'arXiv 2024',
+        date: '2024-05',
+        description: '【高效 MLLM 综述】深度解析边缘设备部署：轻量化架构（MobileVLM/TinyLLaVA）、视觉 Token 压缩（LLaVA-UHD/Mini-Gemini）、高效结构（MoE/Mamba/SSM）、PEFT 技术（LoRA-FA/LOMO）。涵盖剪枝、蒸馏、量化及 ShareGPT4V 数据生成范式。',
+        tags: ['Survey', 'Efficient', 'MoE', 'Mamba', 'PEFT'],
+        path: '/papers/efficient-mllms'
       }
     ]
   }
