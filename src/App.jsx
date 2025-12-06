@@ -1,17 +1,6 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
-
-// ScrollToTop 组件：路由切换时自动滚动到顶部
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
-  return null;
-};
 import DeepSeekV3 from './pages/papers/DeepSeekV3';
 import DeepSeekProverV2 from './pages/papers/DeepSeekProverV2';
 import DeepSeekMathV2 from './pages/papers/DeepSeekMathV2';
@@ -43,6 +32,20 @@ import VITPaper from './pages/papers/VITPaper';
 import MMLLMsPaper from './pages/papers/MMLLMsPaper';
 import MLLMRevolutionPaper from './pages/papers/MLLMRevolutionPaper';
 import EfficientMLLMsPaper from './pages/papers/EfficientMLLMsPaper';
+import MLLMComprehensiveReview from './pages/papers/MLLMComprehensiveReview';
+import MechInterpSurvey from './pages/papers/MechInterpSurvey';
+import UnderstandingMLLMs from './pages/papers/UnderstandingMLLMs';
+
+// ScrollToTop 组件：路由切换时自动滚动到顶部
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
 
 const App = () => {
   return (
@@ -81,6 +84,9 @@ const App = () => {
         <Route path="/papers/mm-llms" element={<MMLLMsPaper />} />
         <Route path="/papers/mllm-revolution" element={<MLLMRevolutionPaper />} />
         <Route path="/papers/efficient-mllms" element={<EfficientMLLMsPaper />} />
+        <Route path="/papers/mllm-comprehensive" element={<MLLMComprehensiveReview />} />
+        <Route path="/papers/mech-interp-survey" element={<MechInterpSurvey />} />
+        <Route path="/papers/understanding-mllms" element={<UnderstandingMLLMs />} />
       </Routes>
     </Router>
   );

@@ -310,6 +310,33 @@ const paperGroups = [
         description: '【高效 MLLM 综述】深度解析边缘设备部署：轻量化架构（MobileVLM/TinyLLaVA）、视觉 Token 压缩（LLaVA-UHD/Mini-Gemini）、高效结构（MoE/Mamba/SSM）、PEFT 技术（LoRA-FA/LOMO）。涵盖剪枝、蒸馏、量化及 ShareGPT4V 数据生成范式。',
         tags: ['Survey', 'Efficient', 'MoE', 'Mamba', 'PEFT'],
         path: '/papers/efficient-mllms'
+      },
+      {
+        id: 'mllm-comprehensive',
+        title: 'A Comprehensive Review of Multimodal Large Language Models',
+        authors: 'arXiv 2024',
+        date: '2024-08',
+        description: '【MLLM 全面综述】从 LLaVA 到 Sora，系统解析图像/视频/音频三大模态：输入编码器（ViT/Whisper/ImageBind）、特征融合（Linear/Q-Former/Cross-Attention）、两阶段训练范式。涵盖 Video-LLaMA、Qwen-Audio、SpeechGPT 等代表模型及幻觉/计算成本等关键挑战。',
+        tags: ['Survey', 'MLLM', 'Video', 'Audio', 'Sora'],
+        path: '/papers/mllm-comprehensive'
+      },
+      {
+        id: 'mech-interp-survey',
+        title: 'A Survey on Mechanistic Interpretability for Multi-Modal Foundation Models',
+        authors: 'arXiv 2025',
+        date: '2025-02',
+        description: '【机械可解释性综述】深度解析 MLLM 内部机制：三维分类体系（模型家族/解释技术/下游应用）、LLM 适配方法（线性探测/Logit Lens/因果追踪/SAE）、多模态特有技术（Cross-Attention 分析/TextSpan/网络解剖）。涵盖模型编辑、幻觉检测、安全去偏等关键应用。',
+        tags: ['Survey', 'Interpretability', 'CLIP', 'Diffusion', 'SAE'],
+        path: '/papers/mech-interp-survey'
+      },
+      {
+        id: 'understanding-mllms',
+        title: 'Understanding Multimodal LLMs',
+        authors: 'Sebastian Raschka',
+        date: '2024',
+        description: '【多模态 LLM 架构指南】深度解析两大核心范式：统一嵌入架构（LLaVA/Molmo/Qwen2-VL）vs 交叉注意力架构（Llama 3.2/NVLM-X/Flamingo）。涵盖 Vision Encoder（ViT/CLIP/SigLIP）、Projector（Linear/MLP/Perceiver）技术细节，并深度盘点 2024 年十大前沿模型及 NVLM 对比结论。',
+        tags: ['Guide', 'Architecture', 'LLaVA', 'NVLM', 'Llama 3.2'],
+        path: '/papers/understanding-mllms'
       }
     ]
   }
