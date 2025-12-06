@@ -35,6 +35,7 @@ import EfficientMLLMsPaper from './pages/papers/EfficientMLLMsPaper';
 import MLLMComprehensiveReview from './pages/papers/MLLMComprehensiveReview';
 import MechInterpSurvey from './pages/papers/MechInterpSurvey';
 import UnderstandingMLLMs from './pages/papers/UnderstandingMLLMs';
+import VLMKnowledgeBase from './pages/papers/VLMKnowledgeBase';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="/papers/mllm-comprehensive" element={<MLLMComprehensiveReview />} />
         <Route path="/papers/mech-interp-survey" element={<MechInterpSurvey />} />
         <Route path="/papers/understanding-mllms" element={<UnderstandingMLLMs />} />
+        <Route path="/papers/vlm-knowledge-base" element={<VLMKnowledgeBase />} />
       </Routes>
     </Router>
   );

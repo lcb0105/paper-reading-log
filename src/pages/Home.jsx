@@ -337,6 +337,15 @@ const paperGroups = [
         description: '【多模态 LLM 架构指南】深度解析两大核心范式：统一嵌入架构（LLaVA/Molmo/Qwen2-VL）vs 交叉注意力架构（Llama 3.2/NVLM-X/Flamingo）。涵盖 Vision Encoder（ViT/CLIP/SigLIP）、Projector（Linear/MLP/Perceiver）技术细节，并深度盘点 2024 年十大前沿模型及 NVLM 对比结论。',
         tags: ['Guide', 'Architecture', 'LLaVA', 'NVLM', 'Llama 3.2'],
         path: '/papers/understanding-mllms'
+      },
+      {
+        id: 'vlm-knowledge-base',
+        title: 'VLM Knowledge Base: 视觉语言模型完全指南',
+        authors: 'Multi-source Summary',
+        date: '2024',
+        description: '【VLM 技术百科】系统整理 15+ 经典与前沿视觉语言模型。基础架构（Flamingo/BLIP-2）、指令微调（InstructBLIP/LLaVA/MiniGPT-4）、架构创新（CogVLM/Qwen-VL/Yi-VL）、高分辨率方案（Monkey/LLaVA-UHD/MoE-LLaVA）、全模态与视频（NExT-GPT/LLaMA-VID）。涵盖 Q-Former、Perceiver Resampler、Visual Expert、AnyRes 等核心技术。',
+        tags: ['Knowledge Base', 'Flamingo', 'BLIP-2', 'LLaVA', 'CogVLM'],
+        path: '/papers/vlm-knowledge-base'
       }
     ]
   }
