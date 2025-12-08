@@ -22,10 +22,21 @@ import {
 } from 'lucide-react';
 
 const VLMKnowledgeBase = () => {
-  const [activeSection, setActiveSection] = useState('flamingo');
+  const [activeSection, setActiveSection] = useState('vit');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const sections = [
+    {
+      id: 'vision_encoder',
+      title: '图像编码器 (Vision Encoder)',
+      icon: <Eye size={20} />,
+      items: [
+        { id: 'vit', title: 'ViT (Vision Transformer)' },
+        { id: 'clip', title: 'CLIP / SigLIP' },
+        { id: 'eva_clip', title: 'EVA-CLIP' },
+        { id: 'encoder_comparison', title: '编码器对比' }
+      ]
+    },
     {
       id: 'foundations',
       title: '基础架构 (Foundations)',
@@ -81,6 +92,323 @@ const VLMKnowledgeBase = () => {
   ];
 
   const content = {
+    // ============= 图像编码器分区 =============
+    vit: (
+      <div className="space-y-6">
+        <header className="border-b pb-4 border-gray-200">
+          <h1 className="text-3xl font-bold text-indigo-900">ViT: Vision Transformer</h1>
+          <p className="text-gray-600 mt-2">Google 2020 年提出，将 Transformer 架构引入计算机视觉领域，彻底改变了图像特征提取方式。</p>
+        </header>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">核心思想：图像即序列</h2>
+          <p className="text-gray-700 text-sm mb-4">
+            ViT 的核心创新是将图像视为一个 <strong>Patch 序列</strong>，类似于 NLP 中的 Token 序列，从而可以直接使用 Transformer Encoder 进行处理。
+          </p>
+          
+          <div className="bg-indigo-50 p-4 rounded-lg mb-4">
+            <h3 className="font-bold text-indigo-800 mb-2">Patch Embedding 过程</h3>
+            <ol className="list-decimal pl-5 text-sm text-gray-700 space-y-2">
+              <li><strong>图像切分：</strong> 将输入图像 (H×W×C) 切分为固定大小的 Patches（如 16×16 或 14×14）</li>
+              <li><strong>展平：</strong> 每个 Patch 展平为一维向量 (P²×C)</li>
+              <li><strong>线性投影：</strong> 通过可学习的线性层投影到 Embedding 维度 D</li>
+              <li><strong>位置编码：</strong> 添加可学习的 Position Embeddings 保留空间信息</li>
+              <li><strong>[CLS] Token：</strong> 在序列开头添加一个特殊的分类 Token</li>
+            </ol>
+          </div>
+          
+          <div className="bg-gray-800 text-green-400 p-4 rounded font-mono text-xs overflow-x-auto">
+            {`# Patch Embedding 公式
+z_0 = [x_class; x_p^1 E; x_p^2 E; ...; x_p^N E] + E_pos
+
+其中:
+- x_p^i: 第 i 个展平的图像 Patch
+- E: 可学习的线性投影矩阵 (P²C × D)
+- E_pos: 位置嵌入 (Position Embeddings)
+- N = HW/P²: Patch 总数`}
+          </div>
+        </section>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">模型变体与规模</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">模型</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">层数</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">Hidden Dim</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">Heads</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">参数量</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr><td className="px-4 py-2">ViT-Base (B)</td><td className="px-4 py-2">12</td><td className="px-4 py-2">768</td><td className="px-4 py-2">12</td><td className="px-4 py-2">86M</td></tr>
+                <tr><td className="px-4 py-2">ViT-Large (L)</td><td className="px-4 py-2">24</td><td className="px-4 py-2">1024</td><td className="px-4 py-2">16</td><td className="px-4 py-2">307M</td></tr>
+                <tr><td className="px-4 py-2">ViT-Huge (H)</td><td className="px-4 py-2">32</td><td className="px-4 py-2">1280</td><td className="px-4 py-2">16</td><td className="px-4 py-2">632M</td></tr>
+                <tr className="bg-indigo-50"><td className="px-4 py-2 font-semibold">ViT-Giant (G)</td><td className="px-4 py-2">40</td><td className="px-4 py-2">1408</td><td className="px-4 py-2">16</td><td className="px-4 py-2">1.8B</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2">
+            <strong>命名规则：</strong> ViT-L/14 表示 Large 模型，Patch 大小为 14×14；ViT-G/14 表示 Giant 模型。
+          </p>
+        </section>
+        
+        <section className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+          <h3 className="font-bold text-amber-800 text-sm">在 VLM 中的应用</h3>
+          <ul className="list-disc pl-5 text-xs text-amber-700 mt-2 space-y-1">
+            <li>大多数 VLM 使用 ViT 作为视觉编码器的基础架构</li>
+            <li>通常<strong>移除最后的分类头</strong>，直接使用中间层的 Patch Embeddings</li>
+            <li>部分模型（如 BLIP-2）使用<strong>倒数第二层</strong>的输出，因为最后一层过于关注 [CLS] 聚合</li>
+          </ul>
+        </section>
+      </div>
+    ),
+    
+    clip: (
+      <div className="space-y-6">
+        <header className="border-b pb-4 border-gray-200">
+          <h1 className="text-3xl font-bold text-indigo-900">CLIP / SigLIP: 对比学习的视觉编码器</h1>
+          <p className="text-gray-600 mt-2">OpenAI 的 CLIP 和 Google 的 SigLIP 是当前 VLM 中最主流的视觉编码器选择。</p>
+        </header>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">CLIP (Contrastive Language-Image Pre-training)</h2>
+          
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <h3 className="font-bold text-blue-800 mb-2">双塔架构</h3>
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                <li><strong>Image Encoder：</strong> ViT 或 ResNet</li>
+                <li><strong>Text Encoder：</strong> Transformer</li>
+                <li>两个编码器<strong>独立</strong>编码图像和文本</li>
+                <li>输出映射到<strong>同一嵌入空间</strong></li>
+              </ul>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+              <h3 className="font-bold text-purple-800 mb-2">对比学习目标</h3>
+              <p className="text-sm text-gray-700 mb-2">
+                最大化配对图文的相似度，最小化非配对的相似度。
+              </p>
+              <div className="bg-white p-2 rounded text-xs font-mono">
+                L = -log(exp(sim(I,T)/τ) / Σexp(sim(I,T')/τ))
+              </div>
+              <p className="text-xs text-gray-500 mt-1">τ 是温度系数，控制分布的锐度</p>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <h3 className="font-bold text-gray-800 mb-2">预训练数据规模</h3>
+            <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
+              <li><strong>WIT (WebImageText)：</strong> 4 亿图文对（OpenAI 内部数据集）</li>
+              <li><strong>LAION-400M / LAION-5B：</strong> 开源复现版本</li>
+            </ul>
+          </div>
+        </section>
+        
+        <section className="bg-green-50 p-6 rounded-lg border border-green-100">
+          <h2 className="text-xl font-bold text-green-800 mb-4">SigLIP: Sigmoid Loss 改进版</h2>
+          <p className="text-gray-700 text-sm mb-4">
+            Google 提出的改进版本，将 Softmax 对比损失替换为 <strong>Sigmoid 损失</strong>。
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <h3 className="font-bold text-gray-800 text-sm mb-2">CLIP (Softmax Loss)</h3>
+              <ul className="list-disc pl-5 text-xs text-gray-600 space-y-1">
+                <li>需要计算整个 Batch 的 Softmax</li>
+                <li>Batch 内样本相互依赖</li>
+                <li>Batch Size 越大效果越好</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-800 text-sm mb-2">SigLIP (Sigmoid Loss)</h3>
+              <ul className="list-disc pl-5 text-xs text-gray-600 space-y-1">
+                <li>每个样本独立计算二分类损失</li>
+                <li>更高效、更稳定</li>
+                <li>小 Batch Size 也能取得好效果</li>
+              </ul>
+            </div>
+          </div>
+          
+          <p className="mt-4 text-sm text-green-700 bg-white p-3 rounded border border-green-200">
+            <strong>使用 SigLIP 的模型：</strong> Molmo, Janus, PaliGemma 等新一代 VLM 优先选择 SigLIP。
+          </p>
+        </section>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">常用 CLIP 变体</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">模型</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">输入分辨率</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">输出维度</th>
+                  <th className="px-4 py-2 text-left font-semibold text-gray-700">使用场景</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr><td className="px-4 py-2">CLIP ViT-B/32</td><td className="px-4 py-2">224×224</td><td className="px-4 py-2">512</td><td className="px-4 py-2">快速原型</td></tr>
+                <tr><td className="px-4 py-2">CLIP ViT-B/16</td><td className="px-4 py-2">224×224</td><td className="px-4 py-2">512</td><td className="px-4 py-2">平衡选择</td></tr>
+                <tr className="bg-indigo-50"><td className="px-4 py-2 font-semibold">CLIP ViT-L/14</td><td className="px-4 py-2">224×224</td><td className="px-4 py-2">768</td><td className="px-4 py-2">LLaVA 默认</td></tr>
+                <tr className="bg-indigo-50"><td className="px-4 py-2 font-semibold">CLIP ViT-L/14@336px</td><td className="px-4 py-2">336×336</td><td className="px-4 py-2">768</td><td className="px-4 py-2">LLaVA-1.5</td></tr>
+                <tr><td className="px-4 py-2">OpenCLIP ViT-G/14</td><td className="px-4 py-2">224×224</td><td className="px-4 py-2">1024</td><td className="px-4 py-2">BLIP-2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    ),
+    
+    eva_clip: (
+      <div className="space-y-6">
+        <header className="border-b pb-4 border-gray-200">
+          <h1 className="text-3xl font-bold text-indigo-900">EVA-CLIP: 增强型视觉编码器</h1>
+          <p className="text-gray-600 mt-2">通过 Masked Image Modeling (MIM) 增强的 CLIP 变体，在多模态任务中表现更优。</p>
+        </header>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">EVA 系列演进</h2>
+          
+          <div className="space-y-4">
+            <div className="border-l-4 border-blue-400 pl-4">
+              <h3 className="font-bold text-gray-800 mb-2">EVA (2022)</h3>
+              <p className="text-sm text-gray-600">
+                引入 <strong>Masked Image Modeling (MIM)</strong> 预训练策略。不同于 CLIP 的纯对比学习，EVA 还要求模型重建被 Mask 的图像区域，从而学到更细粒度的视觉特征。
+              </p>
+            </div>
+            
+            <div className="border-l-4 border-purple-400 pl-4">
+              <h3 className="font-bold text-gray-800 mb-2">EVA-CLIP (2023)</h3>
+              <p className="text-sm text-gray-600">
+                将 EVA 的 MIM 预训练与 CLIP 的对比学习相结合。先用 MIM 预训练 ViT，再用对比学习进行图文对齐。
+              </p>
+              <ul className="list-disc pl-5 text-xs text-gray-500 mt-2 space-y-1">
+                <li><strong>EVA-CLIP ViT-G/14：</strong> 1B 参数，ImageNet Zero-shot 89.4%</li>
+                <li><strong>EVA02-CLIP-E：</strong> 4.4B 参数，目前开源最强 CLIP</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section className="bg-purple-50 p-6 rounded-lg border border-purple-100">
+          <h2 className="text-lg font-bold text-purple-800 mb-4">为什么 EVA-CLIP 更适合 VLM？</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white p-3 rounded border border-purple-200">
+              <h3 className="font-bold text-gray-800 text-sm mb-2">标准 CLIP</h3>
+              <ul className="list-disc pl-5 text-xs text-gray-600 space-y-1">
+                <li>仅通过对比学习训练</li>
+                <li>[CLS] Token 聚合全局语义</li>
+                <li>Patch Features 可能不够细粒度</li>
+              </ul>
+            </div>
+            <div className="bg-white p-3 rounded border border-purple-200">
+              <h3 className="font-bold text-gray-800 text-sm mb-2">EVA-CLIP</h3>
+              <ul className="list-disc pl-5 text-xs text-gray-600 space-y-1">
+                <li>MIM + 对比学习联合训练</li>
+                <li>每个 Patch 都有更丰富的语义</li>
+                <li>更适合细粒度视觉理解</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+          <h3 className="font-bold text-amber-800 text-sm">使用 EVA-CLIP 的知名模型</h3>
+          <ul className="list-disc pl-5 text-xs text-amber-700 mt-2 space-y-1">
+            <li><strong>CogVLM：</strong> 使用 EVA2-CLIP-E（移除最后一层）</li>
+            <li><strong>InternLM-XComposer：</strong> 使用 EVA-CLIP</li>
+            <li><strong>InternVL：</strong> 自研 InternViT-6B，基于 EVA 架构</li>
+          </ul>
+        </section>
+      </div>
+    ),
+    
+    encoder_comparison: (
+      <div className="space-y-6">
+        <header className="border-b pb-4 border-gray-200">
+          <h1 className="text-3xl font-bold text-indigo-900">视觉编码器对比与选择</h1>
+          <p className="text-gray-600 mt-2">不同 VLM 对视觉编码器的选择策略各有不同，这里汇总了主流选择。</p>
+        </header>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">主流 VLM 的编码器选择</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-3 py-2 text-left font-semibold text-gray-700">模型</th>
+                  <th className="px-3 py-2 text-left font-semibold text-gray-700">视觉编码器</th>
+                  <th className="px-3 py-2 text-left font-semibold text-gray-700">分辨率</th>
+                  <th className="px-3 py-2 text-left font-semibold text-gray-700">特殊处理</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 text-xs">
+                <tr><td className="px-3 py-2">Flamingo</td><td className="px-3 py-2">NFNet F6</td><td className="px-3 py-2">-</td><td className="px-3 py-2">对比学习预训练，冻结</td></tr>
+                <tr><td className="px-3 py-2">BLIP-2</td><td className="px-3 py-2">CLIP ViT-G/14</td><td className="px-3 py-2">224</td><td className="px-3 py-2">使用倒数第二层输出</td></tr>
+                <tr className="bg-indigo-50"><td className="px-3 py-2 font-semibold">LLaVA-1.5</td><td className="px-3 py-2">CLIP ViT-L/14</td><td className="px-3 py-2">336</td><td className="px-3 py-2">冻结</td></tr>
+                <tr><td className="px-3 py-2">CogVLM</td><td className="px-3 py-2">EVA2-CLIP-E</td><td className="px-3 py-2">490</td><td className="px-3 py-2">移除最后一层</td></tr>
+                <tr><td className="px-3 py-2">Qwen-VL</td><td className="px-3 py-2">OpenCLIP ViT-G</td><td className="px-3 py-2">448</td><td className="px-3 py-2">分阶段解冻</td></tr>
+                <tr><td className="px-3 py-2">InternVL</td><td className="px-3 py-2">InternViT-6B</td><td className="px-3 py-2">448</td><td className="px-3 py-2">自研，基于 EVA</td></tr>
+                <tr><td className="px-3 py-2">Llama 3.2</td><td className="px-3 py-2">自研 ViT-H/14</td><td className="px-3 py-2">-</td><td className="px-3 py-2">从头训练，更新编码器</td></tr>
+                <tr className="bg-green-50"><td className="px-3 py-2 font-semibold">Molmo</td><td className="px-3 py-2">SigLIP</td><td className="px-3 py-2">-</td><td className="px-3 py-2">全量训练</td></tr>
+                <tr><td className="px-3 py-2">Fuyu-8B</td><td className="px-3 py-2"><strong>无</strong></td><td className="px-3 py-2">任意</td><td className="px-3 py-2">直接线性投影 Patches</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold text-indigo-700 mb-4">编码器训练策略对比</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <h3 className="font-bold text-blue-800 text-sm mb-2">策略 1: 完全冻结</h3>
+              <p className="text-xs text-gray-700 mb-2">代表：LLaVA, BLIP-2</p>
+              <ul className="list-disc pl-4 text-xs text-gray-600 space-y-1">
+                <li>✅ 训练快速、节省显存</li>
+                <li>✅ 保留预训练知识</li>
+                <li>❌ 无法适配特定任务</li>
+              </ul>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+              <h3 className="font-bold text-purple-800 text-sm mb-2">策略 2: 分阶段解冻</h3>
+              <p className="text-xs text-gray-700 mb-2">代表：Qwen-VL, Yi-VL</p>
+              <ul className="list-disc pl-4 text-xs text-gray-600 space-y-1">
+                <li>✅ 平衡效率与效果</li>
+                <li>✅ 逐步适应任务</li>
+                <li>❌ 需要精心设计阶段</li>
+              </ul>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+              <h3 className="font-bold text-green-800 text-sm mb-2">策略 3: 全量训练</h3>
+              <p className="text-xs text-gray-700 mb-2">代表：Molmo, Llama 3.2</p>
+              <ul className="list-disc pl-4 text-xs text-gray-600 space-y-1">
+                <li>✅ 效果最佳</li>
+                <li>✅ 完全适配任务</li>
+                <li>❌ 计算成本最高</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+          <h2 className="text-lg font-bold text-gray-800 mb-4">特殊案例：Fuyu 架构</h2>
+          <p className="text-gray-700 text-sm mb-3">
+            Fuyu-8B 采用了一种<strong>极简架构</strong>，完全跳过了预训练的视觉编码器：
+          </p>
+          <ul className="list-disc pl-5 text-sm text-gray-600 space-y-2">
+            <li><strong>直接投影：</strong> 将原始图像的 Patches 通过一个简单的<strong>线性投影层</strong>直接映射到 LLM 的 Embedding 空间。</li>
+            <li><strong>无分辨率限制：</strong> 支持任意大小的输入图像，无需 Resize 或 Padding。</li>
+            <li><strong>优势：</strong> 架构极度简化，端到端训练更直接。</li>
+            <li><strong>劣势：</strong> 需要更多训练数据来学习视觉特征，因为没有借助 CLIP 等的预训练知识。</li>
+          </ul>
+        </section>
+      </div>
+    ),
+    
+    // ============= 基础架构分区 =============
     flamingo: (
       <div className="space-y-6">
         <header className="border-b pb-4 border-gray-200">

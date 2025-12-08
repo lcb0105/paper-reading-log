@@ -348,6 +348,35 @@ const paperGroups = [
         path: '/papers/vlm-knowledge-base'
       }
     ]
+  },
+  {
+    id: 'vision-encoder',
+    title: 'Vision Encoder 图像编码器',
+    papers: [
+      {
+        id: 'vision-transformer',
+        title: 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale',
+        authors: 'Alexey Dosovitskiy et al.',
+        date: 'ICLR 2021',
+        description: '【ViT 开山之作】提出纯 Transformer 图像分类架构。核心思想：将图像切分为 16×16 Patch 序列，通过线性投影 + 位置编码 + [CLS] Token 输入标准 Transformer 编码器。深度解析四大核心公式（嵌入层/编码器/分类头/Attention），对比 CNN 归纳偏置差异。JFT-300M 预训练后达到 88.55% ImageNet Top-1，计算量仅为 ResNet 的 1/4。',
+        tags: ['ViT', 'Transformer', 'Patch Embedding', 'ICLR 2021'],
+        path: '/papers/vision-transformer'
+      },
+      {
+        id: 'clip',
+        title: 'CLIP: Learning Transferable Visual Models From Natural Language Supervision',
+        authors: 'OpenAI (Radford et al.)',
+        date: '2021-02',
+        description: '【对比学习里程碑】通过对比学习在 4 亿对（图像-文本）数据上训练，实现强大的 Zero-Shot 迁移能力。双塔架构（ViT + Text Transformer）+ 对称交叉熵损失，无需微调直接迁移到 30+ 下游任务，Zero-Shot ImageNet 准确率达 76.2%。',
+        tags: ['CLIP', 'Contrastive Learning', 'Zero-Shot', 'OpenAI'],
+        path: '/papers/clip'
+      }
+    ]
+  },
+  {
+    id: 'popular-mllm',
+    title: 'Popular MLLMs 常用多模态大模型',
+    papers: []
   }
 ];
 
