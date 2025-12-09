@@ -38,6 +38,8 @@ import UnderstandingMLLMs from './pages/papers/UnderstandingMLLMs';
 import VLMKnowledgeBase from './pages/papers/VLMKnowledgeBase';
 import VisionTransformerPaper from './pages/papers/VisionTransformerPaper';
 import CLIP from './pages/papers/CLIP';
+import BLIP from './pages/papers/BLIP';
+import BLIP2 from './pages/papers/BLIP2';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -93,6 +95,8 @@ const App = () => {
         <Route path="/papers/vlm-knowledge-base" element={<VLMKnowledgeBase />} />
         <Route path="/papers/vision-transformer" element={<VisionTransformerPaper />} />
         <Route path="/papers/clip" element={<CLIP />} />
+        <Route path="/papers/blip" element={<BLIP />} />
+        <Route path="/papers/blip2" element={<BLIP2 />} />
       </Routes>
     </Router>
   );

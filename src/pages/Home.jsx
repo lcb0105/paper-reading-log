@@ -370,6 +370,24 @@ const paperGroups = [
         description: '【对比学习里程碑】通过对比学习在 4 亿对（图像-文本）数据上训练，实现强大的 Zero-Shot 迁移能力。双塔架构（ViT + Text Transformer）+ 对称交叉熵损失，无需微调直接迁移到 30+ 下游任务，Zero-Shot ImageNet 准确率达 76.2%。',
         tags: ['CLIP', 'Contrastive Learning', 'Zero-Shot', 'OpenAI'],
         path: '/papers/clip'
+      },
+      {
+        id: 'blip',
+        title: 'BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation',
+        authors: 'Salesforce Research (Li et al.)',
+        date: '2022-01',
+        description: '【统一理解与生成】提出 MED (Multimodal Mixture of Encoder-Decoder) 架构，在单一模型中实现图文理解与生成。通过 CapFilt (Captioning and Filtering) 机制净化网络数据，显著提升多模态任务性能。',
+        tags: ['BLIP', 'Multimodal', 'Encoder-Decoder', 'Data Filtering'],
+        path: '/papers/blip'
+      },
+      {
+        id: 'blip2',
+        title: 'BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models',
+        authors: 'Salesforce Research (Li et al.)',
+        date: '2023-01',
+        description: '【Q-Former 架构】提出轻量级 Querying Transformer (Q-Former) 作为视觉-语言桥梁。两阶段预训练：冻结图像编码器学习表征 → 冻结 LLM 学习生成。可训练参数仅 188M，Zero-shot VQAv2 达 65.0%，超越 Flamingo-80B。',
+        tags: ['BLIP-2', 'Q-Former', 'Frozen LLM', 'CVPR 2023'],
+        path: '/papers/blip2'
       }
     ]
   },
