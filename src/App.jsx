@@ -40,6 +40,7 @@ import VisionTransformerPaper from './pages/papers/VisionTransformerPaper';
 import CLIP from './pages/papers/CLIP';
 import BLIP from './pages/papers/BLIP';
 import BLIP2 from './pages/papers/BLIP2';
+import InstructBLIP from './pages/papers/InstructBLIP';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -97,6 +98,7 @@ const App = () => {
         <Route path="/papers/clip" element={<CLIP />} />
         <Route path="/papers/blip" element={<BLIP />} />
         <Route path="/papers/blip2" element={<BLIP2 />} />
+        <Route path="/papers/instructblip" element={<InstructBLIP />} />
       </Routes>
     </Router>
   );

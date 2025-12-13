@@ -388,6 +388,15 @@ const paperGroups = [
         description: '【Q-Former 架构】提出轻量级 Querying Transformer (Q-Former) 作为视觉-语言桥梁。两阶段预训练：冻结图像编码器学习表征 → 冻结 LLM 学习生成。可训练参数仅 188M，Zero-shot VQAv2 达 65.0%，超越 Flamingo-80B。',
         tags: ['BLIP-2', 'Q-Former', 'Frozen LLM', 'CVPR 2023'],
         path: '/papers/blip2'
+      },
+      {
+        id: 'instructblip',
+        title: 'InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning',
+        authors: 'Salesforce Research (Dai et al.)',
+        date: '2023-05',
+        description: '【指令感知视觉特征】在 BLIP-2 基础上引入指令微调。核心创新：Q-Former 同时接收图像和指令，动态提取任务相关的视觉特征。26 个数据集训练，13 个 Held-out 任务全部 SOTA。平方根采样策略解决数据不平衡问题。',
+        tags: ['InstructBLIP', 'Instruction Tuning', 'Zero-Shot', 'NeurIPS 2023'],
+        path: '/papers/instructblip'
       }
     ]
   },
