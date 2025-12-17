@@ -41,6 +41,7 @@ import CLIP from './pages/papers/CLIP';
 import BLIP from './pages/papers/BLIP';
 import BLIP2 from './pages/papers/BLIP2';
 import InstructBLIP from './pages/papers/InstructBLIP';
+import SigLIP from './pages/papers/SigLIP';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -99,6 +100,7 @@ const App = () => {
         <Route path="/papers/blip" element={<BLIP />} />
         <Route path="/papers/blip2" element={<BLIP2 />} />
         <Route path="/papers/instructblip" element={<InstructBLIP />} />
+        <Route path="/papers/siglip" element={<SigLIP />} />
       </Routes>
     </Router>
   );

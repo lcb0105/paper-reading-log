@@ -397,6 +397,15 @@ const paperGroups = [
         description: '【指令感知视觉特征】在 BLIP-2 基础上引入指令微调。核心创新：Q-Former 同时接收图像和指令，动态提取任务相关的视觉特征。26 个数据集训练，13 个 Held-out 任务全部 SOTA。平方根采样策略解决数据不平衡问题。',
         tags: ['InstructBLIP', 'Instruction Tuning', 'Zero-Shot', 'NeurIPS 2023'],
         path: '/papers/instructblip'
+      },
+      {
+        id: 'siglip',
+        title: 'SigLIP: Sigmoid Loss for Language Image Pre-Training',
+        authors: 'Google DeepMind (Zhai et al.)',
+        date: '2023-03',
+        description: '【Sigmoid 对比学习】用 Sigmoid 损失替代 Softmax，将对比学习问题重新定义为成对二分类。内存消耗不再随 Batch Size 平方增长，32k Batch 即达性能饱和点。4 个 TPUv4 芯片 2 天达到 84.5% ImageNet 0-shot。',
+        tags: ['SigLIP', 'Sigmoid Loss', 'ICCV 2023', 'Efficient Training'],
+        path: '/papers/siglip'
       }
     ]
   },
