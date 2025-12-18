@@ -406,6 +406,15 @@ const paperGroups = [
         description: '【Sigmoid 对比学习】用 Sigmoid 损失替代 Softmax，将对比学习问题重新定义为成对二分类。内存消耗不再随 Batch Size 平方增长，32k Batch 即达性能饱和点。4 个 TPUv4 芯片 2 天达到 84.5% ImageNet 0-shot。',
         tags: ['SigLIP', 'Sigmoid Loss', 'ICCV 2023', 'Efficient Training'],
         path: '/papers/siglip'
+      },
+      {
+        id: 'eva',
+        title: 'EVA: Exploring the Limits of Masked Visual Representation Learning at Scale',
+        authors: 'BAAI (Fang et al.)',
+        date: '2022-11',
+        description: '【10 亿参数 ViT】完全基于公开数据，通过预测被掩码图像区域对应的 CLIP 视觉特征进行预训练。Vanilla ViT 架构 + 负余弦相似度损失。ImageNet 达 89.7% Top-1，LVIS 与 COCO 实例分割差距几乎消除，展现强大语义泛化能力。',
+        tags: ['EVA', 'MIM', 'CLIP Feature', 'CVPR 2022'],
+        path: '/papers/eva'
       }
     ]
   },
