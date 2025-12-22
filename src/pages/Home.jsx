@@ -415,6 +415,15 @@ const paperGroups = [
         description: '【10 亿参数 ViT】完全基于公开数据，通过预测被掩码图像区域对应的 CLIP 视觉特征进行预训练。Vanilla ViT 架构 + 负余弦相似度损失。ImageNet 达 89.7% Top-1，LVIS 与 COCO 实例分割差距几乎消除，展现强大语义泛化能力。',
         tags: ['EVA', 'MIM', 'CLIP Feature', 'CVPR 2022'],
         path: '/papers/eva'
+      },
+      {
+        id: 'eva-clip',
+        title: 'EVA-CLIP: 大规模 CLIP 训练技术的改进',
+        authors: 'BAAI (智源研究院)',
+        date: '2023-03',
+        description: '【高效 CLIP 训练】结合 EVA 初始化 + LAMB 优化器 + Flash Attention + FLIP Token Dropping，5.0B 参数模型仅需 9B 样本即达 82.0% ImageNet Zero-shot Top-1。深度对比 AdamW vs LAMB 优化器原理，CLIP InfoNCE 损失函数公式详解。',
+        tags: ['EVA-CLIP', 'LAMB', 'Flash Attention', 'CVPR 2023'],
+        path: '/papers/eva-clip'
       }
     ]
   },

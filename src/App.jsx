@@ -43,6 +43,7 @@ import BLIP2 from './pages/papers/BLIP2';
 import InstructBLIP from './pages/papers/InstructBLIP';
 import SigLIP from './pages/papers/SigLIP';
 import EVA from './pages/papers/EVA';
+import EVA_CLIP from './pages/papers/EVA_CLIP';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -103,6 +104,7 @@ const App = () => {
         <Route path="/papers/instructblip" element={<InstructBLIP />} />
         <Route path="/papers/siglip" element={<SigLIP />} />
         <Route path="/papers/eva" element={<EVA />} />
+        <Route path="/papers/eva-clip" element={<EVA_CLIP />} />
       </Routes>
     </Router>
   );
