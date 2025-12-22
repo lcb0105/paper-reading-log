@@ -430,7 +430,17 @@ const paperGroups = [
   {
     id: 'popular-mllm',
     title: 'Popular MLLMs 常用多模态大模型',
-    papers: []
+    papers: [
+      {
+        id: 'flamingo',
+        title: 'Flamingo: a Visual Language Model for Few-Shot Learning',
+        authors: 'DeepMind',
+        date: 'NeurIPS 2022',
+        description: '【Few-Shot VLM 里程碑】通过 Perceiver Resampler 将任意长度视觉特征压缩为固定 Token，门控交叉注意力 (tanh(α)=0 初始化) 稳定融合冻结的 NFNet + Chinchilla LLM。M3W 交错图文数据赋予强大 In-context Learning 能力，32-shot 超越多任务 Fine-tuned SOTA。',
+        tags: ['Flamingo', 'Few-Shot', 'Perceiver', 'Gated XATTN'],
+        path: '/papers/flamingo'
+      }
+    ]
   }
 ];
 
