@@ -45,6 +45,7 @@ import SigLIP from './pages/papers/SigLIP';
 import EVA from './pages/papers/EVA';
 import EVA_CLIP from './pages/papers/EVA_CLIP';
 import Flamingo from './pages/papers/Flamingo';
+import LLaVA from './pages/papers/LLaVA';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -107,6 +108,7 @@ const App = () => {
         <Route path="/papers/eva" element={<EVA />} />
         <Route path="/papers/eva-clip" element={<EVA_CLIP />} />
         <Route path="/papers/flamingo" element={<Flamingo />} />
+        <Route path="/papers/llava" element={<LLaVA />} />
       </Routes>
     </Router>
   );

@@ -439,6 +439,15 @@ const paperGroups = [
         description: '【Few-Shot VLM 里程碑】通过 Perceiver Resampler 将任意长度视觉特征压缩为固定 Token，门控交叉注意力 (tanh(α)=0 初始化) 稳定融合冻结的 NFNet + Chinchilla LLM。M3W 交错图文数据赋予强大 In-context Learning 能力，32-shot 超越多任务 Fine-tuned SOTA。',
         tags: ['Flamingo', 'Few-Shot', 'Perceiver', 'Gated XATTN'],
         path: '/papers/flamingo'
+      },
+      {
+        id: 'llava',
+        title: 'LLaVA: Visual Instruction Tuning',
+        authors: 'Microsoft & UW-Madison',
+        date: 'NeurIPS 2023',
+        description: '【视觉指令微调开创之作】首次使用 GPT-4 生成 158K 多模态指令数据。极简架构：Linear Projection 连接 CLIP ViT + Vicuna LLM，两阶段训练（特征对齐→端到端微调）。ScienceQA SOTA (92.53%)，开源推动 LLaVA-1.5/NeXT/OneVision 等后续发展。',
+        tags: ['LLaVA', 'Visual Instruction', 'GPT-4 Data', 'Open Source'],
+        path: '/papers/llava'
       }
     ]
   }
