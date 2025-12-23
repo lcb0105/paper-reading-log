@@ -448,6 +448,15 @@ const paperGroups = [
         description: '【视觉指令微调开创之作】首次使用 GPT-4 生成 158K 多模态指令数据。极简架构：Linear Projection 连接 CLIP ViT + Vicuna LLM，两阶段训练（特征对齐→端到端微调）。ScienceQA SOTA (92.53%)，开源推动 LLaVA-1.5/NeXT/OneVision 等后续发展。',
         tags: ['LLaVA', 'Visual Instruction', 'GPT-4 Data', 'Open Source'],
         path: '/papers/llava'
+      },
+      {
+        id: 'llava-1.5',
+        title: 'LLaVA-1.5: Improved Baselines with Visual Instruction Tuning',
+        authors: 'Microsoft & UW-Madison',
+        date: 'CVPR 2024',
+        description: '【LLaVA 系统性改进】三个关键升级：MLP 连接器替代 Linear Projection + CLIP-ViT-L-336px 高分辨率 + 学术任务数据（VQA/GQA/OCRVQA）。响应格式提示平衡长短回答。仅 1.2M 公开数据，1 天训练，11 项基准 SOTA。',
+        tags: ['LLaVA-1.5', 'MLP Connector', '336px', 'Data Efficient'],
+        path: '/papers/llava-1.5'
       }
     ]
   }
