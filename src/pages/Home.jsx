@@ -466,6 +466,15 @@ const paperGroups = [
         description: '【LLaVA-NeXT 消融实验】深度剖析架构选择：LLM 越强多模态越强，SigLIP-SO400M 最佳性价比。Higher-AnyRes + 阈值双线性插值公式支持 6×6 网格。Stage 1.5 高质量预热至关重要：全量微调 + Re-captioned 合成数据显著提升性能。',
         tags: ['LLaVA-NeXT', 'Ablation', 'Higher-AnyRes', 'Stage 1.5'],
         path: '/papers/llava-next'
+      },
+      {
+        id: 'deepseek-vl',
+        title: 'DeepSeek-VL: Towards Real-World Vision-Language Understanding',
+        authors: 'DeepSeek-AI',
+        date: '2024-03',
+        description: '【混合视觉编码器】结合 SigLIP（语义理解）+ SAM-B（细节捕捉）处理 1024×1024 高分辨率图像。固定 576 Token 预算下实现语义与细节双重捕捉。7:3 文本/多模态数据配比 + Modality Warm-up 策略防止语言能力退化。',
+        tags: ['DeepSeek-VL', 'Hybrid Encoder', 'SigLIP', 'SAM'],
+        path: '/papers/deepseek-vl'
       }
     ]
   }
