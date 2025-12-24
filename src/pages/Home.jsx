@@ -457,6 +457,15 @@ const paperGroups = [
         description: '【LLaVA 系统性改进】三个关键升级：MLP 连接器替代 Linear Projection + CLIP-ViT-L-336px 高分辨率 + 学术任务数据（VQA/GQA/OCRVQA）。响应格式提示平衡长短回答。仅 1.2M 公开数据，1 天训练，11 项基准 SOTA。',
         tags: ['LLaVA-1.5', 'MLP Connector', '336px', 'Data Efficient'],
         path: '/papers/llava-1.5'
+      },
+      {
+        id: 'llava-next',
+        title: 'LLaVA-NeXT Ablations: Beyond Data',
+        authors: 'LLaVA-VL Team',
+        date: '2024-05',
+        description: '【LLaVA-NeXT 消融实验】深度剖析架构选择：LLM 越强多模态越强，SigLIP-SO400M 最佳性价比。Higher-AnyRes + 阈值双线性插值公式支持 6×6 网格。Stage 1.5 高质量预热至关重要：全量微调 + Re-captioned 合成数据显著提升性能。',
+        tags: ['LLaVA-NeXT', 'Ablation', 'Higher-AnyRes', 'Stage 1.5'],
+        path: '/papers/llava-next'
       }
     ]
   }
