@@ -49,6 +49,7 @@ import LLaVA from './pages/papers/LLaVA';
 import LLaVA15 from './pages/papers/LLaVA15';
 import LLaVANeXT from './pages/papers/LLaVANeXT';
 import DeepSeekVL2 from './pages/papers/DeepSeekVL2';
+import QwenVL from './pages/papers/QwenVL';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -115,6 +116,7 @@ const App = () => {
         <Route path="/papers/llava-1.5" element={<LLaVA15 />} />
         <Route path="/papers/llava-next" element={<LLaVANeXT />} />
         <Route path="/papers/deepseek-vl2" element={<DeepSeekVL2 />} />
+        <Route path="/papers/qwen-vl" element={<QwenVL />} />
       </Routes>
     </Router>
   );

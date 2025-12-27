@@ -475,6 +475,15 @@ const paperGroups = [
         description: '【MoE 视觉语言模型】引入动态分块（Dynamic Tiling）处理任意宽高比高分辨率图像，采用 DeepSeekMoE + MLA 架构实现高效推理。三版本 Tiny/Small/Standard (1.0B/2.8B/4.5B 激活参数)，在 OCR、文档理解、视觉定位等任务上达到 SOTA。',
         tags: ['DeepSeek-VL2', 'MoE', 'Dynamic Tiling', 'MLA'],
         path: '/papers/deepseek-vl2'
+      },
+      {
+        id: 'qwen-vl',
+        title: 'Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond',
+        authors: 'Alibaba Group',
+        date: '2023-08',
+        description: '【通用视觉语言模型】基于 Qwen-7B 的多模态扩展，通过位置感知 Cross-Attention Adapter 将 ViT-bigG 视觉特征压缩为固定 256 Token。三阶段训练：14 亿图文对预训练→多任务预训练→指令微调。支持图像描述、VQA、OCR 和视觉定位 (Grounding)，448×448 高分辨率输入。',
+        tags: ['Qwen-VL', 'Cross-Attention', 'Grounding', 'OCR'],
+        path: '/papers/qwen-vl'
       }
     ]
   }
