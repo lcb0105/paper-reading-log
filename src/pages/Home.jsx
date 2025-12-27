@@ -468,13 +468,13 @@ const paperGroups = [
         path: '/papers/llava-next'
       },
       {
-        id: 'deepseek-vl',
-        title: 'DeepSeek-VL: Towards Real-World Vision-Language Understanding',
+        id: 'deepseek-vl2',
+        title: 'DeepSeek-VL2: Mixture-of-Experts Vision-Language Models',
         authors: 'DeepSeek-AI',
-        date: '2024-03',
-        description: '【混合视觉编码器】结合 SigLIP（语义理解）+ SAM-B（细节捕捉）处理 1024×1024 高分辨率图像。固定 576 Token 预算下实现语义与细节双重捕捉。7:3 文本/多模态数据配比 + Modality Warm-up 策略防止语言能力退化。',
-        tags: ['DeepSeek-VL', 'Hybrid Encoder', 'SigLIP', 'SAM'],
-        path: '/papers/deepseek-vl'
+        date: '2024-12',
+        description: '【MoE 视觉语言模型】引入动态分块（Dynamic Tiling）处理任意宽高比高分辨率图像，采用 DeepSeekMoE + MLA 架构实现高效推理。三版本 Tiny/Small/Standard (1.0B/2.8B/4.5B 激活参数)，在 OCR、文档理解、视觉定位等任务上达到 SOTA。',
+        tags: ['DeepSeek-VL2', 'MoE', 'Dynamic Tiling', 'MLA'],
+        path: '/papers/deepseek-vl2'
       }
     ]
   }
