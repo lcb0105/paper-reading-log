@@ -484,6 +484,24 @@ const paperGroups = [
         description: '【通用视觉语言模型】基于 Qwen-7B 的多模态扩展，通过位置感知 Cross-Attention Adapter 将 ViT-bigG 视觉特征压缩为固定 256 Token。三阶段训练：14 亿图文对预训练→多任务预训练→指令微调。支持图像描述、VQA、OCR 和视觉定位 (Grounding)，448×448 高分辨率输入。',
         tags: ['Qwen-VL', 'Cross-Attention', 'Grounding', 'OCR'],
         path: '/papers/qwen-vl'
+      },
+      {
+        id: 'qwen2-vl',
+        title: 'Qwen2-VL: Enhancing Vision-Language Model\'s Perception of the World at Any Resolution',
+        authors: 'Alibaba Qwen Team',
+        date: '2024-09',
+        description: '【动态分辨率 VLM】重新定义视觉处理范式：原生动态分辨率 (Naive Dynamic Resolution) 处理任意尺寸图像 + M-RoPE 多模态旋转位置编码融合时间/高度/宽度三维信息。3D 卷积统一图像视频理解，2×2 池化压缩 Token。72B 版本在 DocVQA、MathVista 超越 GPT-4o。',
+        tags: ['Qwen2-VL', 'M-RoPE', 'Dynamic Resolution', 'Video'],
+        path: '/papers/qwen2-vl'
+      },
+      {
+        id: 'qwen2.5-vl',
+        title: 'Qwen2.5-VL Technical Report',
+        authors: 'Alibaba Qwen Team',
+        date: '2025-02',
+        description: '【细粒度感知 + Agent】Window Attention 优化 ViT 推理效率 + 绝对时间 MRoPE 实现秒级视频事件定位 + 动态 FPS 采样支持小时级视频。4.1T 预训练数据（↑3.4x）。全能文档解析（手写/表格/图表/化学公式/乐谱）+ 精确对象定位 + 电脑/手机操作 Agent 能力。',
+        tags: ['Qwen2.5-VL', 'Window Attention', 'Absolute Time', 'Visual Agent'],
+        path: '/papers/qwen2.5-vl'
       }
     ]
   }
