@@ -502,6 +502,15 @@ const paperGroups = [
         description: '【细粒度感知 + Agent】Window Attention 优化 ViT 推理效率 + 绝对时间 MRoPE 实现秒级视频事件定位 + 动态 FPS 采样支持小时级视频。4.1T 预训练数据（↑3.4x）。全能文档解析（手写/表格/图表/化学公式/乐谱）+ 精确对象定位 + 电脑/手机操作 Agent 能力。',
         tags: ['Qwen2.5-VL', 'Window Attention', 'Absolute Time', 'Visual Agent'],
         path: '/papers/qwen2.5-vl'
+      },
+      {
+        id: 'qwen2.5-omni',
+        title: 'Qwen2.5-Omni Technical Report',
+        authors: 'Qwen Team, Alibaba Group',
+        date: '2025-03',
+        description: '【端到端全模态流式交互】Thinker-Talker 双模块架构解耦推理与语音生成 + TMROPE 实现音画精确同步（40ms精度）+ 滑动窗口 DiT 实现毫秒级流式输出。支持文本/图像/音频/视频统一感知与文本+语音双模态生成。DPO 优化语音质量，击败专门 TTS 模型。',
+        tags: ['Qwen2.5-Omni', 'Thinker-Talker', 'TMROPE', 'Streaming', 'End-to-End'],
+        path: '/papers/qwen2.5-omni'
       }
     ]
   }
