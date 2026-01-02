@@ -511,6 +511,15 @@ const paperGroups = [
         description: '【端到端全模态流式交互】Thinker-Talker 双模块架构解耦推理与语音生成 + TMROPE 实现音画精确同步（40ms精度）+ 滑动窗口 DiT 实现毫秒级流式输出。支持文本/图像/音频/视频统一感知与文本+语音双模态生成。DPO 优化语音质量，击败专门 TTS 模型。',
         tags: ['Qwen2.5-Omni', 'Thinker-Talker', 'TMROPE', 'Streaming', 'End-to-End'],
         path: '/papers/qwen2.5-omni'
+      },
+      {
+        id: 'janus',
+        title: 'Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation',
+        authors: 'DeepSeek-AI',
+        date: '2024-10',
+        description: '【解耦视觉编码的统一模型】理解任务用 SigLIP 提取高层语义，生成任务用 VQ Tokenizer 保留像素细节，双路径共享同一 LLM。1.3B 参数超越 LLaVA-1.5 7B (POPE 87.0 vs 85.9)，GenEval 击败 SDXL 和 DALL-E 2。CFG 引导增强文图一致性。',
+        tags: ['Janus', 'Decoupling', 'SigLIP', 'VQ Tokenizer', 'CFG'],
+        path: '/papers/janus'
       }
     ]
   }
