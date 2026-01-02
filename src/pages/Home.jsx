@@ -520,8 +520,22 @@ const paperGroups = [
         description: '【解耦视觉编码的统一模型】理解任务用 SigLIP 提取高层语义，生成任务用 VQ Tokenizer 保留像素细节，双路径共享同一 LLM。1.3B 参数超越 LLaVA-1.5 7B (POPE 87.0 vs 85.9)，GenEval 击败 SDXL 和 DALL-E 2。CFG 引导增强文图一致性。',
         tags: ['Janus', 'Decoupling', 'SigLIP', 'VQ Tokenizer', 'CFG'],
         path: '/papers/janus'
+      },
+      {
+        id: 'kimi-vl',
+        title: 'Kimi-VL Technical Report',
+        authors: 'Moonshot AI',
+        date: '2025-04',
+        description: '【高效 MoE 视觉语言模型】16B 总参数仅 2.8B 激活，128K 长上下文。MoonViT 原生分辨率 + NaViT Packing + 2D RoPE。Thinking-2506 版本：MathVista 80.1、MathVision 56.9、VideoMMMU 65.2（超 GPT-4o）。Long-CoT + RL 训练，Token 消耗减少 20%。ScreenSpot-Pro 52.8 远超 GPT-4o (0.8)。',
+        tags: ['Kimi-VL', 'MoE', 'MoonViT', 'Long-CoT', '128K Context'],
+        path: '/papers/kimi-vl'
       }
     ]
+  },
+  {
+    id: 'iquest-jiukun-series',
+    title: 'IQuest_九坤 Series',
+    papers: []
   }
 ];
 

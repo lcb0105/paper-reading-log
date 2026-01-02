@@ -54,6 +54,7 @@ import Qwen2VL from './pages/papers/Qwen2VL';
 import Qwen25VL from './pages/papers/Qwen25VL';
 import Qwen25Omni from './pages/papers/Qwen25Omni';
 import Janus from './pages/papers/Janus';
+import KimiVL from './pages/papers/KimiVL';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -125,6 +126,7 @@ const App = () => {
         <Route path="/papers/qwen2.5-vl" element={<Qwen25VL />} />
         <Route path="/papers/qwen2.5-omni" element={<Qwen25Omni />} />
         <Route path="/papers/janus" element={<Janus />} />
+        <Route path="/papers/kimi-vl" element={<KimiVL />} />
       </Routes>
     </Router>
   );
