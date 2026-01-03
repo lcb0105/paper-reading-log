@@ -535,7 +535,17 @@ const paperGroups = [
   {
     id: 'iquest-jiukun-series',
     title: 'IQuest_九坤 Series',
-    papers: []
+    papers: [
+      {
+        id: 'iquest-coder-v1',
+        title: 'IQuest-Coder-V1 Technical Report',
+        authors: 'IQuest Coder Team',
+        date: '2025',
+        description: '【Code-Flow 多阶段训练范式】超越静态代码表示，7B/14B/40B 全系列 + LoopCoder 循环架构。提出多语言 Scaling Law 显式建模跨语言迁移。SWE-Bench 81.4%、HumanEval+ 90.2、CRUXEval 98.9%。Thinking Path 激发长程推理与错误自修正能力。',
+        tags: ['IQuest-Coder', 'Code-Flow', 'LoopCoder', 'Scaling Law', 'SWE-Bench'],
+        path: '/papers/iquest-coder-v1'
+      }
+    ]
   }
 ];
 
