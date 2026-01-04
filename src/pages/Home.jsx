@@ -5,6 +5,21 @@ import { BookOpen, ArrowRight, Calendar, FolderOpen, List } from 'lucide-react';
 // 分组数据结构
 const paperGroups = [
   {
+    id: 'my-work',
+    title: 'My Work & Related 我的工作与相关论文',
+    papers: [
+      {
+        id: 'p-tuning-v2',
+        title: 'P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks',
+        authors: 'Xiao Liu, Kaixuan Ji, et al. (Tsinghua)',
+        date: '2022-03',
+        description: '【Deep Prompt Tuning】打破 Prompt Tuning 的局限性，在每一层 Transformer 加入可训练 Prompt 向量。仅微调 0.1%-3% 参数，在 330M-2B 模型规模和困难序列标注任务（NER/QA）上达到与 Fine-tuning 相当的性能。',
+        tags: ['P-Tuning', 'Prompt Tuning', 'PEFT', 'NLU'],
+        path: '/papers/p-tuning-v2'
+      }
+    ]
+  },
+  {
     id: 'deepseek-series',
     title: 'DeepSeek Series',
     papers: [

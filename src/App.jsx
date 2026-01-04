@@ -56,6 +56,7 @@ import Qwen25Omni from './pages/papers/Qwen25Omni';
 import Janus from './pages/papers/Janus';
 import KimiVL from './pages/papers/KimiVL';
 import IQuestCoderV1 from './pages/papers/IQuestCoderV1';
+import PTuningV2 from './pages/papers/PTuningV2';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -129,6 +130,7 @@ const App = () => {
         <Route path="/papers/janus" element={<Janus />} />
         <Route path="/papers/kimi-vl" element={<KimiVL />} />
         <Route path="/papers/iquest-coder-v1" element={<IQuestCoderV1 />} />
+        <Route path="/papers/p-tuning-v2" element={<PTuningV2 />} />
       </Routes>
     </Router>
   );
