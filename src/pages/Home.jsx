@@ -16,6 +16,15 @@ const paperGroups = [
         description: '【Deep Prompt Tuning】打破 Prompt Tuning 的局限性，在每一层 Transformer 加入可训练 Prompt 向量。仅微调 0.1%-3% 参数，在 330M-2B 模型规模和困难序列标注任务（NER/QA）上达到与 Fine-tuning 相当的性能。',
         tags: ['P-Tuning', 'Prompt Tuning', 'PEFT', 'NLU'],
         path: '/papers/p-tuning-v2'
+      },
+      {
+        id: 'neftune',
+        title: 'NEFTune: Noisy Embeddings Improve Instruction Finetuning',
+        authors: 'Neel Jain et al.',
+        date: '2023-10',
+        description: '【噪声嵌入正则化】极简却惊人的增强技术：仅在训练时的 Embedding 上添加随机噪声，LLaMA-2-7B 在 AlpacaEval 从 29.8% 飙升至 64.7%（+35%）。通过 α/√(Ld) 缩放因子控制扰动强度，作为正则化器防止过拟合指令格式。',
+        tags: ['NEFTune', 'Regularization', 'Instruction Tuning', 'ICLR 2024'],
+        path: '/papers/neftune'
       }
     ]
   },
