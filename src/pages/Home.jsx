@@ -25,6 +25,15 @@ const paperGroups = [
         description: '【噪声嵌入正则化】极简却惊人的增强技术：仅在训练时的 Embedding 上添加随机噪声，LLaMA-2-7B 在 AlpacaEval 从 29.8% 飙升至 64.7%（+35%）。通过 α/√(Ld) 缩放因子控制扰动强度，作为正则化器防止过拟合指令格式。',
         tags: ['NEFTune', 'Regularization', 'Instruction Tuning', 'ICLR 2024'],
         path: '/papers/neftune'
+      },
+      {
+        id: 'dcpc',
+        title: 'Whose Instructions Count? Resolving Preference Bias in Instruction Fine-Tuning',
+        authors: 'First Author Work',
+        date: '2025-09',
+        description: '【🏆 NeurIPS 2025 一作】解决指令微调中被忽视的"偏好偏差"问题。提出 DCPC (Dynamic Cross-Layer Preference Correction) 框架：通过偏好敏感相似度检测冲突、跨层前缀对齐拉近表示、PCM 模块注入共识偏好。在偏好偏移数据集上 Acc 提升 4-6.7%，方差降低 35%。',
+        tags: ['DCPC', 'Preference Bias', 'IFT', 'NeurIPS 2025', '🏆 First Author'],
+        path: '/papers/dcpc'
       }
     ]
   },
