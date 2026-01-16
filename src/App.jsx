@@ -59,6 +59,9 @@ import IQuestCoderV1 from './pages/papers/IQuestCoderV1';
 import PTuningV2 from './pages/papers/PTuningV2';
 import NEFTune from './pages/papers/NEFTune';
 import DCPC from './pages/papers/DCPC';
+import ReflectiveWords from './pages/papers/ReflectiveWords';
+import FFNKeyValue from './pages/papers/FFNKeyValue';
+import GeometryOfTruth from './pages/papers/GeometryOfTruth';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -135,6 +138,9 @@ const App = () => {
         <Route path="/papers/p-tuning-v2" element={<PTuningV2 />} />
         <Route path="/papers/neftune" element={<NEFTune />} />
         <Route path="/papers/dcpc" element={<DCPC />} />
+        <Route path="/papers/reflective-words" element={<ReflectiveWords />} />
+        <Route path="/papers/ffn-key-value" element={<FFNKeyValue />} />
+        <Route path="/papers/geometry-of-truth" element={<GeometryOfTruth />} />
       </Routes>
     </Router>
   );

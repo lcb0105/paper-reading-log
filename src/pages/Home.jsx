@@ -34,6 +34,33 @@ const paperGroups = [
         description: '【🏆 NeurIPS 2025 一作】解决指令微调中被忽视的"偏好偏差"问题。提出 DCPC (Dynamic Cross-Layer Preference Correction) 框架：通过偏好敏感相似度检测冲突、跨层前缀对齐拉近表示、PCM 模块注入共识偏好。在偏好偏移数据集上 Acc 提升 4-6.7%，方差降低 35%。',
         tags: ['DCPC', 'Preference Bias', 'IFT', 'NeurIPS 2025', '🏆 First Author'],
         path: '/papers/dcpc'
+      },
+      {
+        id: 'reflective-words',
+        title: 'Are Reflective Words in Large Reasoning Models a Sign of Genuine Capability or Memorized Patterns?',
+        authors: 'Second Author Work',
+        date: '2026-01',
+        description: '【🥈 ACL 2026 二作】大型推理模型（LRM）中的"Wait, let me check..."等反思性词语是真实能力还是机械记忆？通过均值差分提取自我反思特征向量，因果分析验证其对 MLP 值向量的激活作用。干预实验证明：增强/抑制该特征可控制模型"深思熟虑"或"快速回答"。',
+        tags: ['LRM', 'Self-Reflection', 'Interpretability', 'ACL 2026', '🥈 Second Author'],
+        path: '/papers/reflective-words'
+      },
+      {
+        id: 'ffn-key-value',
+        title: 'Transformer Feed-Forward Layers Are Key-Value Memories',
+        authors: 'Mor Geva et al. (Tel-Aviv University, AI2)',
+        date: '2020-12',
+        description: '【FFN = 键值记忆】开创性发现：FFN 占据模型 2/3 参数，本质上是未归一化的键值记忆网络。Keys（W₁）检测文本模式，Values（W₂）存储预测分布。底层捕获浅层 n-gram，高层捕获语义模式。为理解 Transformer 内部机制奠定重要基础。',
+        tags: ['FFN', 'Key-Value Memory', 'Interpretability', 'Transformer'],
+        path: '/papers/ffn-key-value'
+      },
+      {
+        id: 'geometry-of-truth',
+        title: 'The Geometry of Truth: Emergent Linear Structure in LLM Representations of True/False Datasets',
+        authors: 'Samuel Marks, Max Tegmark (MIT, Northeastern)',
+        date: '2024-10',
+        description: '【真理的线性几何】LLM 内部存在"真理方向"！通过 PCA 可视化揭示真/假陈述的线性分离结构。提出 Mass-Mean Probing：简单的均值差方法比逻辑回归更能捕捉因果机制。跨数据集泛化证明模型学到了抽象的"真理"概念。',
+        tags: ['Truth Probing', 'Linear Representation', 'Interpretability', 'COLM 2024'],
+        path: '/papers/geometry-of-truth'
       }
     ]
   },
@@ -146,6 +173,13 @@ const paperGroups = [
         tags: ['LLM', 'MoE', 'Thinking Mode', '36T Tokens'],
         path: '/papers/qwen3'
       }
+    ]
+  },
+  {
+    id: 'nvidia-series',
+    title: 'Nvidia Series',
+    papers: [
+      // Nvidia 系列论文将在此添加
     ]
   },
   {
