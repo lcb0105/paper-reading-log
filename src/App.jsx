@@ -62,6 +62,8 @@ import DCPC from './pages/papers/DCPC';
 import ReflectiveWords from './pages/papers/ReflectiveWords';
 import FFNKeyValue from './pages/papers/FFNKeyValue';
 import GeometryOfTruth from './pages/papers/GeometryOfTruth';
+import EEDISolution from './pages/papers/EEDISolution';
+import MDCSolution from './pages/papers/MDCSolution';
 
 // ScrollToTop 组件：路由切换时自动滚动到顶部
 const ScrollToTop = () => {
@@ -141,6 +143,8 @@ const App = () => {
         <Route path="/papers/reflective-words" element={<ReflectiveWords />} />
         <Route path="/papers/ffn-key-value" element={<FFNKeyValue />} />
         <Route path="/papers/geometry-of-truth" element={<GeometryOfTruth />} />
+        <Route path="/papers/eedi-solution" element={<EEDISolution />} />
+        <Route path="/papers/mdc-solution" element={<MDCSolution />} />
       </Routes>
     </Router>
   );

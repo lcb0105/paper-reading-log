@@ -61,6 +61,24 @@ const paperGroups = [
         description: '【真理的线性几何】LLM 内部存在"真理方向"！通过 PCA 可视化揭示真/假陈述的线性分离结构。提出 Mass-Mean Probing：简单的均值差方法比逻辑回归更能捕捉因果机制。跨数据集泛化证明模型学到了抽象的"真理"概念。',
         tags: ['Truth Probing', 'Linear Representation', 'Interpretability', 'COLM 2024'],
         path: '/papers/geometry-of-truth'
+      },
+      {
+        id: 'eedi-solution',
+        title: 'EEDI - Mining Misconceptions in Mathematics',
+        authors: 'Kaggle Bronze Medal Solution',
+        date: '2024-12',
+        description: '【🥉 Kaggle 铜牌方案】教育科技挑战：从 2500+ 候选误解中检索学生数学错误背后的 Misconception。基于 Qwen2.5-14B + QLoRA 微调，结合 GPT-4 合成数据增强、Hard Negative Mining 难负例挖掘，构建高精度 Retrieval & Ranking 系统。MAP@25 评价指标。',
+        tags: ['Kaggle', 'Retrieval', 'QLoRA', 'Qwen2.5', '🥉 Bronze'],
+        path: '/papers/eedi-solution'
+      },
+      {
+        id: 'mdc-solution',
+        title: 'Make Data Count 2025 - Finding Data References',
+        authors: 'Kaggle Silver Medal Solution (52nd / 1282)',
+        date: '2025-01',
+        description: '【🥈 Kaggle 银牌方案】科研论文数据引用识别挑战。采用"解析-提取-LLM验证-后处理"四阶段流水线：PyMuPDF/XML 双流解析、800+ 出版商前缀黑名单过滤、Qwen2.5-32B 上下文语义验证（Logits 概率阈值 0.7）、关键词二次过滤。Top 4% 排名。',
+        tags: ['Kaggle', 'NLP', 'Qwen2.5', 'vLLM', '🥈 Silver'],
+        path: '/papers/mdc-solution'
       }
     ]
   },
