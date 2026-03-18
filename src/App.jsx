@@ -55,6 +55,7 @@ import Qwen25VL from './pages/papers/Qwen25VL';
 import Qwen25Omni from './pages/papers/Qwen25Omni';
 import Janus from './pages/papers/Janus';
 import KimiVL from './pages/papers/KimiVL';
+import AttentionResiduals from './pages/papers/AttentionResiduals';
 import IQuestCoderV1 from './pages/papers/IQuestCoderV1';
 import PTuningV2 from './pages/papers/PTuningV2';
 import NEFTune from './pages/papers/NEFTune';
@@ -136,6 +137,7 @@ const App = () => {
         <Route path="/papers/qwen2.5-omni" element={<Qwen25Omni />} />
         <Route path="/papers/janus" element={<Janus />} />
         <Route path="/papers/kimi-vl" element={<KimiVL />} />
+        <Route path="/papers/attention-residuals" element={<AttentionResiduals />} />
         <Route path="/papers/iquest-coder-v1" element={<IQuestCoderV1 />} />
         <Route path="/papers/p-tuning-v2" element={<PTuningV2 />} />
         <Route path="/papers/neftune" element={<NEFTune />} />

@@ -606,6 +606,12 @@ const paperGroups = [
         tags: ['Janus', 'Decoupling', 'SigLIP', 'VQ Tokenizer', 'CFG'],
         path: '/papers/janus'
       },
+    ]
+  },
+  {
+    id: 'kimi-series',
+    title: 'Kimi Series',
+    papers: [
       {
         id: 'kimi-vl',
         title: 'Kimi-VL Technical Report',
@@ -614,6 +620,15 @@ const paperGroups = [
         description: '【高效 MoE 视觉语言模型】16B 总参数仅 2.8B 激活，128K 长上下文。MoonViT 原生分辨率 + NaViT Packing + 2D RoPE。Thinking-2506 版本：MathVista 80.1、MathVision 56.9、VideoMMMU 65.2（超 GPT-4o）。Long-CoT + RL 训练，Token 消耗减少 20%。ScreenSpot-Pro 52.8 远超 GPT-4o (0.8)。',
         tags: ['Kimi-VL', 'MoE', 'MoonViT', 'Long-CoT', '128K Context'],
         path: '/papers/kimi-vl'
+      },
+      {
+        id: 'attention-residuals',
+        title: 'Attention Residuals',
+        authors: 'Kimi Team',
+        date: '2025-03',
+        description: '【注意力残差】用 Softmax 注意力机制取代固定单位权重的残差累加，每层通过可学习伪查询向量选择性聚合前序层表示。Block AttnRes 将层划分为块级表示进行注意力计算，内存从 O(L) 降至 O(N)。等效 1.25x 算力增益，缓解幅度膨胀与梯度不均。',
+        tags: ['AttnRes', 'Block Attention', 'Residual Connection', 'Scaling Laws'],
+        path: '/papers/attention-residuals'
       }
     ]
   },
